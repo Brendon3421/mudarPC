@@ -1,0 +1,70 @@
+1- Suponha que você tenha duas tabelas: "alunos" e "cursos". A tabela "alunos" 
+possui as colunas "id_aluno", "nome" e "curso_id", enquanto a tabela "cursos" 
+possui as colunas "id_curso" e "nome_curso". Escreva uma consulta SQL para 
+obter o nome do aluno e o nome do curso em que estão matriculados usando 
+um INNER JOIN.
+
+SELECT nome from alunos INNER JOIN cursos ON alunos.id_alunos = cursos.id_curso;
+
+2- Escreva uma consulta SQL para obter todos os alunos e os cursos 
+correspondentes que eles estão matriculados usando um LEFT JOIN.
+
+SELECT nome from alunos LEFT JOIN cursos ON alunos.id_alunos = cursos.id_curso;
+
+3- Escreva uma consulta SQL para obter todos os cursos e os alunos 
+correspondentes matriculados usando um RIGHT JOIN.
+
+SELECT nome from alunos RIGHT JOIN cursos ON alunos.id_alunos = cursos.id_curso;
+
+4- Escreva uma consulta SQL para obter todos os alunos e os cursos 
+correspondentes que eles estão matriculados usando um FULL JOIN.
+
+5- Escreva uma consulta SQL para obter o produto cartesiano entre as tabelas 
+"alunos" e "cursos"
+
+SELECT nome_curso , nome FROM alunos CROSS JOIN cursos;
+
+1 - Selecionar todos os alunos e seus cursos.
+
+SELECT  nome_aluno , nome_curso from cursos   INNER JOIN alunos ON alunos.id_alunos = cursos.id_curso;
+
+2 - Selecionar todos os cursos e seus alunos:
+
+SELECT nome_curso , nome_aluno from cursos INNER JOIN alunos ON alunos.id_alunos = cursos.id_curso;
+
+3 - Selecionar todos os alunos, seus cursos e a en"dade associada:
+
+SELECT nome_aluno , nome_curso ,nome_entidade from cursos INNER JOIN alunos ON alunos.id_alunos = cursos.id_curso JOIN entidades ON cursos.id_curso = entidades.id_entidade;
+ 
+
+4 - Selecionar todos os cursos, seus alunos e a en"dade associada:
+
+SELECT nome_aluno , nome_curso ,nome_entidade from cursos INNER JOIN alunos ON alunos.id_alunos = cursos.id_curso JOIN entidades ON cursos.id_curso = entidades.id_entidade;
+ 
+5 - Selecionar todos os alunos, seus cursos, a en"dade associada e o professor 
+relacionado:
+
+SELECT  nome_aluno , nome_curso ,nome_entidade ,nome_professor  from cursos   INNER JOIN alunos  ON alunos.id_alunos  = cursos.id_curso JOIN entidades ON cursos.id_curso = entidades.id_entidade JOIN professor ON cursos.id_curso = professor.id_professor;
+
+6 - Selecionar todos os cursos, seus alunos, a en"dade associada e o professor 
+relacionado:
+
+SELECT   nome_curso, nome_aluno  ,nome_entidade ,nome_professor  from cursos   INNER JOIN alunos  ON alunos.id_alunos  = cursos.id_curso JOIN entidades ON cursos.id_curso = entidades.id_entidade JOIN professor ON cursos.id_curso = professor.id_professor;
+
+7 - Selecionar todos os alunos, seus cursos e o professor relacionado:
+
+SELECT    nome_aluno , nome_curso ,nome_professor  from cursos   INNER JOIN alunos  ON alunos.id_alunos  = cursos.id_curso JOIN professor ON cursos.id_curso = professor.id_professor;
+
+8 - Selecionar todos os cursos, seus alunos e o professor relacionado:
+
+SELECT   nome_curso, nome_aluno  ,nome_professor  from cursos   INNER JOIN alunos  ON alunos.id_alunos  = cursos.id_curso JOIN professor ON cursos.id_curso = professor.id_professor;
+
+9 - Selecionar todos os alunos, seus cursos, a en"dade associada e o professor 
+relacionado, ordenados pelo nome do aluno:
+
+SELECT nome_aluno , nome_curso ,nome_entidade ,nome_professor from cursos INNER JOIN alunos ON alunos.id_alunos = cursos.id_curso JOIN entidades ON cursos.id_curso = entidades.id_entidade JOIN professor ON cursos.id_curso = professor.id_professor ORDER BY nome_aluno , nome_curso , nome_professor DESC;
+
+10 - Selecionar todos os cursos, seus alunos, a en"dade associada e o professor 
+relacionado, ordenados pelo nome do curso
+
+SELECT  nome_curso,nome_aluno ,nome_entidade ,nome_professor from cursos INNER JOIN alunos ON alunos.id_alunos = cursos.id_curso JOIN entidades ON cursos.id_curso = entidades.id_entidade JOIN professor ON cursos.id_curso = professor.id_professor ORDER BY  nome_curso  DESC;

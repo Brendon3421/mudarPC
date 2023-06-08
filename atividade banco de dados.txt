@@ -1,0 +1,58 @@
+1-Crie um banco de dados chamado mercado.
+CRETE DATABASE mercado
+
+2-Crie uma tabela chamada "produtos" com os seguintes campos: id (inteiro, chave primária), nome (texto), preço (decimal) e quantidade (inteiro). Insira cinco registros nessa tabela
+
+CREATE TABLE produtos()(
+ID  INT , NOT NULL
+nome VARCHAR(200) NOT NULL
+preco DECIMAL NOT NULL
+quantidade LONG INT ,NOT NULL
+
+PRIMARY_KEY
+);
+INSERT INTO produtos(nome , preco , quantidade) VALUES ("Pão",'3.50','9',),("Picanha do lula ",'70','3'),("coca-cola","13",'40'),("ovo-do-bolsonaro","9.50",'20'),("Banana-RJ","7.99",'12');
+
+3-Escreva uma consulta para selecionar o produto com o preço mais alto na tabela "produtos"
+
+SELECT NOME , PREÇO FROM produto ORDER BY PREÇO DESC LIMIT 1;
+
+4-Escreva uma consulta para selecionar todos os produtos cuja quantidade seja maior que 10.
+
+SELECT quantidade FROM produto WHERE (quantidade)> 10;
+
+
+5-Escreva uma consulta para contar quantos produtos têm o preço menor que 50.
+
+SELECT PREÇO FROM produto WHERE (PREÇO)<50;
+
+6. Escreva uma consulta para ordenar os produtos em ordem decrescente de preço.
+
+SELECT * FROM produto  ORDER BY PREÇO DESC;
+
+7-Escreva uma consulta para atualizar o preço de um produto com base no seu ID
+
+UPDATE produto SET PREÇO = 13.99 WHERE produto.ID = 1
+
+8. Crie uma tabela chamada "clientes" com os seguintes campos: id (inteiro, chave primária), nome (texto), email (texto) e telefone (texto). Insira três registros nessa tabela.
+CREATE DATABASE cliente (
+ID AUTO INCREMENTE NOT NULL,
+NOME VARCHAR(500)NOT NULL,
+EMAIL (VARCHAR(500),
+TELEFONE VARCHAR(40),
+PRIMARY KEY (ID)
+)
+
+INSERT INTO cliente( nome, email, telefone) VALUES  ( "bianca","bia@gmial.com" , "49 999232566"),("caetano","cae@gmial.com" , "49 999232566"),("joao",'cris@gmial.com' , "49 999200566"),("guilherme",'gui@gmial.com ', "49 999302566")
+
+9. Escreva uma consulta para selecionar todos os clientes que têm um email terminando com "@gmail.com".
+
+SELECT * FROM cliente WHERE email LIKE '%@gmial.com';
+
+10. Escreva uma consulta para selecionar os clientes cujo nome começa com a letra "A".
+
+SELECT * FROM cliente WHERE email LIKE '%@'
+
+11. Escreva uma consulta para excluir um cliente com base no seu ID.
+
+DELETE FROM cliente WHERE id = 2
